@@ -21,6 +21,7 @@ ScraperBina.az, Bina.az platformasındakı daşınmaz əmlak elanlarını toplam
 <p align="center">
   <img src="Assets/screenshot2.png" alt=Ekran Görüntüsü2">
 </p>
+
 ## İstifadə
 
 - UI üzərindən lazım olan filtr təyin edin (Saytdakı Bütün Filterlər mövcuddur).
@@ -31,6 +32,7 @@ ScraperBina.az, Bina.az platformasındakı daşınmaz əmlak elanlarını toplam
 <p align="center">
   <img src="Assets/screenshot3.png" alt=Ekran Görüntüsü3">
 </p>
+
 ---
 
 ## Əlavə qeydlər
