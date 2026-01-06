@@ -4,7 +4,7 @@ ScraperBina.az, Bina.az platformasındakı daşınmaz əmlak elanlarını toplam
 
 ---
 <p align="center">
-  <img src="Assets/screenshot1.png" alt=Ekran Görüntüsü">
+  <img src="Assets/screenshot1.png" alt=Ekran Görüntüsü1">
 </p>
 
 
@@ -18,7 +18,9 @@ ScraperBina.az, Bina.az platformasındakı daşınmaz əmlak elanlarını toplam
 - ClosedXML Version = 0.105.0
   
 ---
-
+<p align="center">
+  <img src="Assets/screenshot2.png" alt=Ekran Görüntüsü2">
+</p>
 ## İstifadə
 
 - UI üzərindən lazım olan filtr təyin edin (Saytdakı Bütün Filterlər mövcuddur).
@@ -26,7 +28,9 @@ ScraperBina.az, Bina.az platformasındakı daşınmaz əmlak elanlarını toplam
 - Scrape etmək istədyiniz elan sayını daxil edin və qeyd olunma formatını (Excel,CSV) seçin.
 - Prosesini başladın.
 - Yaddaşa yazılan elanlar ...bin\Debug\net8.0-windows\output qovluğunun içinə yazılır 
-
+<p align="center">
+  <img src="Assets/screenshot3.png" alt=Ekran Görüntüsü3">
+</p>
 ---
 
 ## Əlavə qeydlər
