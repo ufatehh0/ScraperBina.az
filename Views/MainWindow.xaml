@@ -1,0 +1,830 @@
+﻿<Window x:Class="BinaScraperApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Bina.az Scraper"
+        Height="1080" Width="1920"
+            WindowState="Maximized">
+
+    <ScrollViewer VerticalScrollBarVisibility="Visible">
+
+
+        <StackPanel x:Name="UmumiStackPanel" Background="#FFA6A8BB">
+
+
+
+            <StackPanel x:Name="FilterStackPanel">
+                <CheckBox x:Name="BrowserVisibleCheckBox"
+                              Content="Browser Açıq Olsun"
+                              
+                              FontSize="16"
+                              IsChecked="False"
+                              Margin="20,0,0,0"
+                              />
+                <StackPanel Margin="20">
+                    <!-- ========== Header ========== -->
+                    <!-- ========== Əməliyyat Növü ========== -->
+                    <!-- ========== Header ========== -->
+                    <!-- ========== Əməliyyat Növü ========== -->
+                    <!-- ========== Header ========== -->
+                    <!-- ========== Əməliyyat Növü ========== -->
+                    <!-- ========== Header ========== -->
+                    <TextBlock Text="Bina.AZ Scraper"  FontWeight="Bold" FontSize="22" Width="170" Margin="-1089,0,0,0" HorizontalAlignment="Center" FontStyle="Italic"/>
+                    <!-- ========== Əməliyyat Növü ========== -->
+                    <TextBlock Text="Əməliyyat Növü :" FontWeight="Bold" FontSize="16" Margin="0 15 0 5"/>
+                    <WrapPanel>
+                        <RadioButton Content="Alqı-Satqı" Tag="alqi-satqi" IsChecked="True" Checked="Operation_Checked"/>
+                        <RadioButton Content="Kirayə (Uzunmüddətli)" Tag="kirayeay" Checked="Operation_Checked"/>
+                        <RadioButton Content="Kirayə (Günlük)" Tag="kirayegun" Checked="Operation_Checked"/>
+                        <RadioButton Content="Kirayə (Ümumi)" Tag="kirayeumumi" Checked="Operation_Checked"/>
+
+                    </WrapPanel>
+
+
+                    <!-- ========== Şəhər ========== -->
+                    <WrapPanel>
+                        <TextBlock Text="Şəhər:" FontSize="16" FontWeight="Bold" Margin="0 15 0 5"/>
+                        <Button 
+                        x:Name="SeherButton"
+                        Content="Şəhər Panelini Gizlə"
+                        Width="200"
+                        Height="30"
+                            FontWeight="Bold"
+                        Background="LightSkyBlue"
+                        Margin="30 0 0 0"
+                        Click="SeherButton_Click"/>
+                    </WrapPanel>
+                    <WrapPanel>
+                        <UniformGrid x:Name="SeherPanel"  Columns="12" Rows="0" Width="1108">
+                            <RadioButton Content="Fərqi Yoxdur"  Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Bakı" IsChecked="True"  Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Xırdalan" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Sumqayıt" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Gəncə" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Qəbələ" Margin="0 0 10 10" Checked="City_Checked" />
+                            <RadioButton Content="Şamaxı" Margin="0 0 10 10" Checked="City_Checked" />
+                            <RadioButton Content="İsmayıllı" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Quba" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Qusar" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Xaçmaz" Margin="0 0 10 10" Checked="City_Checked"/>
+                            
+                            <RadioButton Content="Ağcabədi" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Ağdam" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Ağdaş" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Ağstafa" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Ağsu" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Astara" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Bakı" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Balakən" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Beyləqan" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Bərdə" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Biləsuvar" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Cəlilabad" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Daşkəsən" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Gədəbəy" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Gəncə" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Goranboy" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Göyçay" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Göygöl" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Hacıqabul" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Xaçmaz" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Xırdalan" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Xızı" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Xudat" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="İmişli" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="İsmayıllı" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Kürdəmir" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Qax" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Qazax" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Qəbələ" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Qobustan" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Quba" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Qusar" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Lerik" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Lənkəran" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Masallı" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Mingəçevir" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Naftalan" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Naxçıvan" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Naxçıvan(MR)" Margin="0 0 0 10" Checked="City_Checked"/>
+                            <RadioButton Content="Neftçala" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Oğuz" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Saatlı" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Sabirabad" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Salyan" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Samux" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Siyəzən" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Sumqayıt" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Şabran" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Şamaxı" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Şəki" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Şəmkir" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Şirvan" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Şuşa" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Tərtər" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Tovuz" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Ucar" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Yardımlı" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Yevlax" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Zaqatala" Margin="0 0 10 10" Checked="City_Checked"/>
+                            <RadioButton Content="Zərdab" Margin="0 0 10 10" Checked="City_Checked"/>
+
+
+                        </UniformGrid>
+                    </WrapPanel>
+
+
+                    <UniformGrid Background="LightGray" Columns="3" Rows="0" Margin="10" >
+                        <!-- ========== Metro Göster gizle ========== -->
+                        <Button 
+            x:Name="MetroButton"
+            Content="Metro Panelini Göstər"
+            Width="200"
+            Height="30"
+                FontWeight="Bold"
+            Background="LightSkyBlue"
+            Margin="0 0 0 0"
+            Click="MetroButton_Click"/>
+
+
+
+                        <!-- ========== Rayon Göster gizle ========== -->
+                        <Button 
+            x:Name="RayonButton"
+                FontWeight="Bold"
+            Content="Rayon Panelini Göstər"
+            Width="200"
+            Height="30"
+            Background="LightSkyBlue"
+            Margin="0 0 0 0"
+            Click="RayonButton_Click"/>
+
+
+
+                        <!-- ========== Nişangah Göster gizle ========== -->
+                        <Button 
+            x:Name="NisangahButton"
+                FontWeight="Bold"
+            Content="Rayon Panelini Göstər"
+            Width="200"
+            Height="30"
+            Background="LightSkyBlue"
+            Margin="0 0 0 0"
+            Click="NisangahButton_Click"/>
+                    </UniformGrid>
+                    <!-- ========== Metro ========== -->
+                    <StackPanel x:Name="MetroPanel" Visibility="Collapsed" >
+                        <TextBlock Text="Metro :" FontSize="16" FontWeight="Bold" Margin="0 15 0 5"/>
+                        <WrapPanel>
+                            <UniformGrid  Background="LightGray" Columns="7" Rows="0" Margin="10">
+
+                                <CheckBox Content="20 Yanvar Metro" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="28 May Metro" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="8 Noyabr Metro" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Avtovağzal Metro" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Azadlıq Prospekti Metro" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Bakmil Metro" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Dərnəgül Metro" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Elmlər Akademiyası Metro" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Əhmədli Metro" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Gənclik Metro" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Həzi Aslanov Metro" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="İçəri Şəhər Metro" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="İnşaatçılar Metro" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Koroğlu Metro" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Memar Əcəmi Metro" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Nəriman Nərimanov Metro" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Neftçilər Metro" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Nizami Metro" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Qara Qarayev Metro" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Sahil Metro" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Şah İsmayıl Xətai Metro" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Ulduz Metro" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Xalqlar Dostluğu Metro" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Xocəsən Metro" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Nəsimi Metro" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+
+                            </UniformGrid>
+                        </WrapPanel>
+                    </StackPanel>
+
+
+
+
+
+
+
+
+                    <!-- ========== Rayon ========== -->
+                    <StackPanel x:Name="RayonPanel"  Visibility="Collapsed">
+                        <TextBlock Text="RAYON: (Ümumi Rayon Seçildikdə, Həmin Rayonun içindəki bütün bölgələr avtomatik seçilir)" FontSize="18" FontWeight="Bold" Margin="0 15 0 5"/>
+                        <WrapPanel>
+
+                            <UniformGrid Background="LightGray" Columns="3" Rows="0" Margin="10">
+                                <UniformGrid Columns="3" Rows="0" Margin="10">
+
+                                    <TextBlock Text="Abşeron(Ümumi Rayon) : "  FontWeight="Bold" FontSize="15" Margin="0 -4 10 0"/>
+                                    <CheckBox Content="Abşeron(Ümumi Rayon)" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Aşağı Güzdək" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Atyalı" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Ceyranbatan" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Çiçək" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Digah" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Fatmayı" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Görədil" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Güzdək" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Hökməli" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Köhnə Corat" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Qobu" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Masazır" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Mehdiabad" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Məmmədli" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Novxanı" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Pirəkəşkül" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Saray" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Yeni Corat" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Zuğulba" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                </UniformGrid>
+
+
+                                <UniformGrid  Columns="3" Rows="0" Margin="10">
+                                    <TextBlock Text="Binəqədi(Ümumi Rayon) : " FontWeight="Bold" FontSize="15" Margin="0 -4 10 0"/>
+
+                                    <CheckBox Content="Binəqədi(Ümumi Rayon)" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="2-ci Alatava" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="28 May" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="6-cı mikrorayon" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="7-ci mikrorayon" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="8-ci mikrorayon" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="9-cu mikrorayon" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Biləcəri" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Binəqədi" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Xocəsən" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Xutor" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="M.Ə.Rəsulzadə" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Sulutəpə" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                </UniformGrid>
+
+                                <UniformGrid Columns="3" Rows="0" Margin="10">
+                                    <TextBlock Text="Qaradağ(Ümumi Rayon) : "  FontWeight="Bold" FontSize="15" Margin="0 -4 10 0"/>
+
+                                    <CheckBox Content="Qaradağ(Ümumi Rayon)" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Ələt" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Qızıldaş" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Qobustan" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Lökbatan" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Müşfiqabad" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Puta" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Sahil" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Səngəçal" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Şubanı" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                </UniformGrid>
+
+                                <UniformGrid Columns="3" Rows="0" Margin="10">
+                                    <TextBlock Text="Xətai(Ümumi Rayon) : " FontWeight="Bold" FontSize="15" Margin="0 -4 10 0"/>
+
+                                    <CheckBox Content="Xətai(Ümumi Rayon)" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Ağ şəhər" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Əhmədli" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Həzi Aslanov" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Köhnə Günəşli" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="NZS" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                </UniformGrid>
+
+                                <UniformGrid Columns="3" Rows="0" Margin="10">
+                                    <TextBlock Text="Nəsimi(Ümumi Rayon) : " FontWeight="Bold" FontSize="15" Margin="0 -4 10 0"/>
+
+                                    <CheckBox Content="Nəsimi(Ümumi Rayon)" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="1-ci mikrorayon" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="2-ci mikrorayon" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="3-cü mikrorayon" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="4-cü mikrorayon" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="5-ci mikrorayon" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Kubinka" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+
+                                </UniformGrid>
+
+                                <UniformGrid Columns="3" Rows="0" Margin="10">
+                                    <TextBlock Text="Nərimanov(Ümumi Rayon) : " FontWeight="Bold" FontSize="15" Margin="0 -4 10 0"/>
+
+                                    <CheckBox Content="Nərimanov(Ümumi Rayon)" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Böyükşor" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                </UniformGrid>
+
+
+                                <UniformGrid Columns="3" Rows="0" Margin="10">
+                                    <TextBlock Text="Nizami(Ümumi Rayon) : " FontWeight="Bold" FontSize="15" Margin="0 -4 10 0"/>
+
+                                    <CheckBox Content="Nizami(Ümumi Rayon)" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="8-ci kilometr" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Keşlə" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                </UniformGrid>
+
+
+                                <UniformGrid Columns="3" Rows="0" Margin="10">
+                                    <TextBlock Text="Pirallahı(Ümumi Rayon) : " FontWeight="Bold" FontSize="15" Margin="0 -4 10 0"/>
+                                    <CheckBox Content="Pirallahı(Ümumi Rayon)" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+
+                                    <TextBlock Text="Sabunçu(Ümumi Rayon) : " FontWeight="Bold" FontSize="15" Margin="0 -4 10 0"/>
+                                    <CheckBox Content="Sabunçu(Ümumi Rayon)" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Albalılıq" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Bakıxanov" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Balaxanı" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Bilgəh" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Kürdəxanı" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Maştağa" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Nardaran" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Pirşağı" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Ramana" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Sabunçu" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Savalan" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Sea Breeze" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Yeni Balaxanı" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Yeni Ramana" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Zabrat" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+
+                                </UniformGrid>
+
+                                <UniformGrid Columns="3" Rows="0" Margin="10">
+                                    <TextBlock Text="Səbail(Ümumi Rayon) : " FontWeight="Bold" FontSize="15" Margin="0 -4 10 0"/>
+
+                                    <CheckBox Content="Səbail(Ümumi Rayon)" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="20-ci sahə" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Badamdar" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Bayıl" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Bibiheybət" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Şıxov" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                </UniformGrid>
+
+
+                                <UniformGrid Columns="3" Rows="0" Margin="10">
+                                    <TextBlock Text="Suraxanı(Ümumi Rayon) : " FontWeight="Bold" FontSize="15" Margin="0 -4 10 0"/>
+
+                                    <CheckBox Content="Suraxanı(Ümumi Rayon)" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Bahar" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Bülbülə" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Dədə Qorqud" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Əmircan" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Günəşli" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Hövsan" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Qaraçuxur" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Massiv A" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Massiv B" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Massiv D" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Massiv G" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Massiv V" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Suraxanı" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Şərq" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Yeni Günəşli" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Yeni Suraxanı" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Zığ" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+
+                                </UniformGrid>
+
+
+                                <UniformGrid Columns="3" Rows="0" Margin="10">
+                                    <TextBlock Text="Yasamal(Ümumi Rayon) : " FontWeight="Bold" FontSize="15" Margin="0 -4 10 0"/>
+
+                                    <CheckBox Content="Yasamal(Ümumi Rayon)" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Yasamal" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Yeni Yasamal" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                </UniformGrid>
+
+                                <UniformGrid Columns="3" Rows="0" Margin="10">
+                                    <TextBlock Text="Xəzər(Ümumi Rayon) : " FontWeight="Bold" FontSize="15" Margin="0 -4 10 0"/>
+
+                                    <CheckBox Content="Xəzər(Ümumi Rayon)" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Binə" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Buzovna" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Dübəndi" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Gürgən" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Qala" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Mərdəkan" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Şağan" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Şimal DRES" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Şüvəlan" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Türkan" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                    <CheckBox Content="Zirə" Margin="0 0 10 10" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+
+                                </UniformGrid>
+
+                            </UniformGrid>
+
+
+                        </WrapPanel>
+                    </StackPanel>
+
+
+
+                    <!-- ========== Nişangah ========== -->
+                    <StackPanel x:Name="NişangahPanel" Visibility="Collapsed">
+                        <TextBlock Text="Nişangahlar :"  FontWeight="Bold" FontSize="16" Margin="0 15 0 5"/>
+                        <WrapPanel>
+
+
+                            <UniformGrid Background="LightGray" Columns="5" Rows="0" Margin="10">
+                                <CheckBox Content="Abşeron Ticarət Mərkəzi" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Dağüstü parkı" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="M.Ə.Sabir parkı" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Sea Breeze Event Hall" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Ağ şəhər(Nişangah) " Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="DİM" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="M.Hüseynzadə parkı" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Sevil Qazıyeva parkı" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Axundov bağı" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Dostluq kinoteatrı" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Melissa Park" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Sədərək &quot;Elit&quot;" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="ASAN Xidmət №1" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Dövlət İdarəçilik Akademiyası" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Memarlıq və İnşaat Universiteti" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Sədərək xalça bazarı" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="ASAN Xidmət №2" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Dövlət Statistika Komitəsi" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Meyvəli Ticarət Mərkəzi" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Sədərək şirniyyat bazarı" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="ASAN Xidmət №3" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Elit Ticarət Mərkəzi" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Mərkəzi Nəbatat bağı" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Sədərək tekstil bazarı" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="ASAN Xidmət №5" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Eurohome Biləcəri Ticarət Mərkəzi" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Mərkəzi Park" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Sədərək təsərrüfat bazarı" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Ayna Sultanova heykəli" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Fəvvarələr meydanı" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Mərkəzi Univermaq" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Sədərək Ticarət Mərkəzi" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Azadlıq meydanı" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Filarmoniya bağı" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Milli Konservatoriya" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Səməd Vurğun parkı" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Azərbaycan Dillər Universiteti" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Grand Hayat Residence" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Montin bazarı" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Sirk" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Azərbaycan Dövlət Neft və Sənaye Universiteti" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Heydər Əliyev adına İdman Kompleksi" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Neapol dairəsi" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Sovetski" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Azərbaycan kinoteatrı" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Hüseyn Cavid parkı" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Neftçi bazası" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Space TV" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Azərbaycan turizm institutu" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Xaqani bağı" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Nəriman Nərimanov parkı" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Şəfa stadionu" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Azneft meydanı" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Xaqani Ticarət Mərkəzi" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Nərimanov heykəli" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Şəhidlər xiyabanı" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Bakı Asiya Universiteti" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Xalça Muzeyi" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Nəsimi bazarı" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Şəlalə parkı" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Bakı Dövlət Universiteti" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="İçəri Şeher" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Nizami kinoteatrı" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Şərq bazarı" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Bakı Musiqi Akademiyası" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="İqtisad Universiteti" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Park Zorge" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Texniki Universiteti" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Bakı Slavyan Universiteti" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="İncəsənət və Mədəniyyət Un." Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Pedaqoji Universiteti" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Təhsil Nazirliyi" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Bayıl parkı" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="İzmir parkı" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Port Baku" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Tibb Universiteti" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Beşmərtəbə" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Keşlə bazarı" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Prezident parkı" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Ukrayna dairəsi" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Binə atçılıq mərkəzi" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Koala parkı" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Respublika stadionu" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Yasamal bazarı" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Binə Ticarət Mərkəzi" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Qış parkı" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Rəssamlıq Akademiyası" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Zabitlər parkı" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Cavanşir körpüsü" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Qurtuluş 93 YK" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Riyad Ticarət Mərkəzi" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Zərifə Əliyeva adına park" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Circus Sea Breeze" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Laçın Ticarət Mərkəzi" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Rusiya səfirliyi" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Zoopark" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Crescent Bay" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Landau Məktəbi (Sea Breeze)" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+                                <CheckBox Content="Sahil bağı" Checked="Metro_Checked" Unchecked="Metro_Unchecked"/>
+
+                            </UniformGrid>
+
+                        </WrapPanel>
+                    </StackPanel>
+
+
+
+
+
+                    <!-- ========== Əmlak növü ========== -->
+                    <TextBlock Text="Əmlak növü:" FontSize="16" FontWeight="Bold"  Margin="0 15 0 5"/>
+                    <WrapPanel>
+                        <RadioButton GroupName="PropertyType" Content="Mənzil" IsChecked="True" Margin="0 0 10 10" Checked="PropertyType_Checked"/>
+                        <RadioButton GroupName="PropertyType" Content="Həyət evi/Bağ evi" Margin="0 0 10 10" Checked="PropertyType_Checked"/>
+                        <RadioButton GroupName="PropertyType" Content="Ofis" Margin="0 0 10 10" Checked="PropertyType_Checked"/>
+                        <RadioButton GroupName="PropertyType" Content="Qaraj" Margin="0 0 10 10" Checked="PropertyType_Checked"/>
+                        <RadioButton GroupName="PropertyType" Content="Torpaq" Margin="0 0 10 10" Checked="PropertyType_Checked"/>
+                        <RadioButton GroupName="PropertyType" Content="Obyekt" Margin="0 0 10 10" Checked="PropertyType_Checked"/>
+
+                    </WrapPanel>
+
+                    <!-- ========== Tikili növü ========== -->
+
+                    <StackPanel x:Name="YeniKohnePanel" Orientation="Horizontal" Visibility="Visible" >
+                        <TextBlock Text="Tikilinin növü:"  FontWeight="Bold" FontSize="16"/>
+                        <RadioButton GroupName="BuildingType" Content="Fərqi yoxdur" IsChecked="True" Margin="0 5 10 0" Checked="BuildingType_Checked"/>
+                        <RadioButton GroupName="BuildingType" Content="Yeni tikili" Margin="0 5 10 0" Checked="BuildingType_Checked"/>
+                        <RadioButton GroupName="BuildingType" Content="Köhnə tikili" Margin="0 5 10 0" Checked="BuildingType_Checked"/>
+                    </StackPanel>
+
+
+
+                    <!-- ========== Tikili növü ========== -->
+
+                    <StackPanel x:Name="OfisTikiliPanel" Orientation="Horizontal" Visibility="Collapsed" >
+                        <TextBlock Text="Tikilinin növü:"  FontWeight="Bold" FontSize="16"/>
+
+                        <CheckBox  Content="Biznes mərkəzi" Margin="0 5 10 0" Checked="OfficeType_BiznesChecked" Unchecked="OfficeType_BiznesUnchecked"/>
+                        <CheckBox  Content="Ev / Mənzil" Margin="0 5 10 0" Checked="OfficeType_EvChecked" Unchecked="OfficeType_EvUnchecked"/>
+                        <CheckBox  Content="Villa" Margin="0 5 10 0" Checked="OfficeType_VillaChecked" Unchecked="OfficeType_VillaUnchecked"/>
+                    </StackPanel>
+
+                    <!-- ========== Qiymət ========== -->
+                    <TextBlock Text="Qiymət (₼):"  FontWeight="Bold" FontSize="16" Margin="0 15 0 5"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Min :  " FontSize="16"  FontWeight="Bold" Height="20"/>
+                        <TextBox x:Name="PriceMin" Height="20" Width="80" Margin="0 0 10 0" TextChanged="PriceMin_TextChanged" PreviewTextInput="NumberOnly_PreviewTextInput"  PreviewKeyDown="NumberOnly_PreviewKeyDown" />
+                        <TextBlock Text="Max :  " FontSize="16"  FontWeight="Bold" Height="20"/>
+                        <TextBox x:Name="PriceMax" Width="80" TextChanged="PriceMax_TextChanged" PreviewTextInput="NumberOnly_PreviewTextInput"  PreviewKeyDown="NumberOnly_PreviewKeyDown" Height="20"/>
+
+                    </StackPanel>
+                    <StackPanel x:Name="CixarisPanel" Orientation="Horizontal" Margin="-20 10 0 0">
+                        <CheckBox  Content="Çıxarış" Width="80" Margin="20 0 0 0"
+              Checked="CixarishCheck_Checked"
+              Unchecked="CixarishCheck_Unchecked"/>
+
+                        <CheckBox Content="İpoteka" Width="80" Margin="20 0 0 0"
+Checked="IpotekaCheck_Checked"
+Unchecked="IpotekaCheck_Unchecked"/>
+
+
+                    </StackPanel>
+
+                    <!-- ========== Otaq sayı (çoxlu seçim) ========== -->
+                    <StackPanel x:Name="OtaqPanel" >
+                    <TextBlock Text="Otaq sayı:"  FontWeight="Bold" FontSize="16" Margin="0 15 0 5"/>
+                    <WrapPanel>
+                        <CheckBox Content="1" Margin="0 0 10 10"
+          Checked="Room_Checked" Unchecked="Room_Unchecked"/>
+
+                        <CheckBox Content="2" Margin="0 0 10 10"
+          Checked="Room_Checked" Unchecked="Room_Unchecked"/>
+
+                        <CheckBox Content="3" Margin="0 0 10 10"
+          Checked="Room_Checked" Unchecked="Room_Unchecked"/>
+
+                        <CheckBox Content="4" Margin="0 0 10 10"
+          Checked="Room_Checked" Unchecked="Room_Unchecked"/>
+
+                        <CheckBox Content="5+" Margin="0 0 10 10"
+          Checked="Room_Checked" Unchecked="Room_Unchecked"/>
+
+                    </WrapPanel>
+                    </StackPanel>
+
+                    <!-- ========== Təmir ========== -->
+                    
+                    <StackPanel x:Name="TemirPanel" Orientation="Horizontal">
+                        <TextBlock Text="Təmir:" FontSize="16" FontWeight="Bold" Margin="0 15 0 5"/>
+                        
+                        <RadioButton GroupName="RepairStatus" Content="Fərqi yoxdur" IsChecked="True" Margin="20 20 20 0" Checked="Temir_Checked" />
+                        <RadioButton GroupName="RepairStatus" Content="Təmirlidir" Margin="0 20 20 0" Checked="Temir_Checked"/>
+                        <RadioButton GroupName="RepairStatus" Content="Təmirsiz" Checked="Temir_Checked" Margin="0 20 20 0"/>
+                    </StackPanel>
+
+                    <!-- ========== Sahə ========== -->
+                    <StackPanel x:Name="AreaPanel"   >
+                        <TextBlock Text="Sahə (m²):" FontSize="16" FontWeight="Bold" Margin="0 15 0 5"/>
+                    <StackPanel Orientation="Horizontal">
+                        <!-- Min Sahe -->
+                        <TextBlock Text="Min :  " FontSize="16"  FontWeight="Bold" RenderTransformOrigin="0.537,-0.619" Height="20"/>
+                        <TextBox x:Name="AreaMin" Tag="min." Width="70" Margin="0 0 10 0" Height="20" Foreground="Gray" PreviewTextInput="NumberOnly_PreviewTextInput" PreviewKeyDown="NumberOnly_PreviewKeyDown" TextChanged="AreaMin_TextChanged"
+            />
+                        <TextBlock Text="Max :  " FontSize="16"  FontWeight="Bold" Height="21"/>
+                        <TextBox x:Name="AreaMax"
+                            Tag="maks."
+                            Width="70"
+                            Margin="0 0 25 0"
+                            Height="20"
+                            Foreground="Gray"
+            
+            
+                         PreviewTextInput="NumberOnly_PreviewTextInput"
+                          PreviewKeyDown="NumberOnly_PreviewKeyDown"
+            TextChanged="AreaMax_TextChanged"/>
+                    </StackPanel>
+                    </StackPanel>
+
+
+
+
+                    <!-- ========== Torpağın sahəsi, sot ========== -->
+                    
+                    <StackPanel x:Name="LandAreaPanel" Orientation="Horizontal" Visibility="Collapsed">
+
+                        <TextBlock Text="Torpağın sahəsi, sot:" FontSize="16" FontWeight="Bold" Margin="0 15 0 5"/>
+                        <!-- Min Sahe -->
+                        <TextBlock Text="Min :  " FontSize="16"  FontWeight="Bold" RenderTransformOrigin="0.537,-0.619" Height="20" Margin="10 10 0 0"/>
+                        <TextBox x:Name="LandAreaMin" Tag="min." Width="70" Margin="10 10 10 0" Height="20" Foreground="Gray" PreviewTextInput="NumberOnly_PreviewTextInput" PreviewKeyDown="NumberOnly_PreviewKeyDown" TextChanged="LandAreaMin_TextChanged"
+/>
+                        <TextBlock Text="Max :  " FontSize="16"  FontWeight="Bold" Height="21"  Margin="10 10 0 0"/>
+                        <TextBox x:Name="LandAreaMax"
+                                Tag="maks."
+                                Width="70"
+                                Margin="0 10 25 0"
+                                Height="20"
+                                 
+                                Foreground="Gray"
+
+
+                             PreviewTextInput="NumberOnly_PreviewTextInput"
+                              PreviewKeyDown="NumberOnly_PreviewKeyDown"
+                TextChanged="LandAreaMax_TextChanged"/>
+                    </StackPanel>
+
+
+
+
+
+
+
+
+                    <!-- =================== MƏRTƏBƏ =================== -->
+                   
+
+                    <StackPanel x:Name="MertebePanel" Orientation="Horizontal" Margin="0 15 0 0" Height="75" Width="2058">
+                        <TextBlock Text="Mərtəbə" FontSize="16"  FontWeight="Bold" Margin="0 0 0 5"/>
+                        <!-- Min mərtəbə -->
+                        <TextBlock Text="Min :  " FontSize="16"  FontWeight="Bold" Height="20"/>
+                        <TextBox x:Name="FloorMin"
+             Tag="min."
+             Width="70"
+             Margin="0 0 10 0"
+             Height="20"
+                         PreviewTextInput="NumberOnly_PreviewTextInput"
+                          PreviewKeyDown="NumberOnly_PreviewKeyDown"
+             Foreground="Gray"
+             
+                         TextChanged="FloorMin_TextChanged"/>
+                        <TextBlock Text="Max :  " FontSize="16"  FontWeight="Bold" Height="19"/>
+                        <TextBox x:Name="FloorMax"
+             Tag="maks."            
+             Width="70"
+             Margin="0 0 25 0"
+             Height="20"
+             Foreground="Gray"
+            
+                         PreviewTextInput="NumberOnly_PreviewTextInput"
+                          PreviewKeyDown="NumberOnly_PreviewKeyDown"
+                         
+                         TextChanged="FloorMax_TextChanged"/>
+
+                        <!-- 1-ci olmasın -->
+                        <CheckBox x:Name="NotFirstCheck"
+              Content="1-ci olmasın"
+              Margin="0 0 20 0"
+                          Checked="NotFirstCheck_Checked"
+                          Unchecked="NotFirstCheck_Unchecked" Height="18"/>
+
+                        <!-- Ən üst olmasın -->
+                        <CheckBox x:Name="NotTopCheck"
+              Content="Ən üst olmasın"
+              Margin="0 0 20 0"
+              Checked="NotTopCheck_Checked"
+              Unchecked="NotTopCheck_Unchecked" Height="18"/>
+
+                        <!-- Yalnız ən üst -->
+                        <CheckBox x:Name="OnlyTopCheck"
+              Content="Yalnız ən üst"
+              Checked="OnlyTopCheck_Checked"
+              Unchecked="OnlyTopCheck_Unchecked" Height="18"/>
+
+                    </StackPanel>
+                    
+                        <CheckBox x:Name="OnlyResidences"
+                            Content="Yalnız Tikinti Şirkətləri"
+                            Checked="OnlyResidencesCheck_Checked"
+                            Unchecked="OnlyResidencesCheck_Unchecked"/>
+                        <!-- Only Residences -->
+                    <!-- Export Format Panel  -->
+                    <StackPanel x:Name="ExportFormatPanel" Visibility="Collapsed" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock Text="Yazılacaq Format :" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,5"/>
+                        <StackPanel x:Name="ExportRadioPanel"  Orientation="Horizontal" HorizontalAlignment="Center">
+                            <RadioButton x:Name="ExcelFormatRadio" Content="Excel" GroupName="ExportFormat" IsChecked="True" FontSize="12" Margin="0,0,10,0"/>
+                            <RadioButton x:Name="CsvFormatRadio" Content="CSV" GroupName="ExportFormat" FontSize="12"/>
+                            <RadioButton x:Name="BothFormatRadio" Content="Hər ikisi" GroupName="ExportFormat" FontSize="12"/>
+                        </StackPanel>
+                    </StackPanel>
+                    
+                    
+                    
+
+                </StackPanel>
+                <!-- COUNT INPUT -->
+                <StackPanel x:Name="GirisStackPanel"
+                                Visibility="Collapsed"
+                                Margin="0,10,0,20">
+
+                    <TextBlock Text="Yazdırmaq istədiyiniz elan sayı"
+                                   
+                                   FontSize="18"
+                                   HorizontalAlignment="Center"/>
+
+                    <TextBox x:Name="SayTextBox"
+                                 Width="300"
+                                 HorizontalAlignment="Center"
+                                 Margin="0,8,0,0"/>
+                </StackPanel>
+                <!-- PROGRESS -->
+                <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Center">
+
+                    <ProgressBar x:Name="ScrapeProgressBar"
+                                     Width="420"
+                                     Height="18"
+                                     
+                                     Background="#333"
+                                     Visibility="Collapsed"/>
+
+                    <TextBlock x:Name="EtaText"
+                                   Text=""
+                                   
+                                   FontSize="16"
+                                   Margin="15,0,0,0"
+                                   VerticalAlignment="Center"
+                                   Visibility="Collapsed"/>
+                </StackPanel>
+            </StackPanel >
+            <UniformGrid Columns="3" Rows="0" Height="159" Width="1290" Margin="0,0,0,0">
+
+
+
+
+
+                <!-- ========== FILTER SIFIRLAMA BUTTONU ========== -->
+                <Button Content="Bütün Filterləri Sıfırla"
+                    FontWeight="Bold"
+                    FontSize="15"
+                    Width="200"
+                    Background="Tomato"
+                    Click="ResetButton_Click" Margin="115,62,115,47"/>
+
+                <!-- ========== AXTAR BUTTONU ========== -->
+                <Button Content="Elanları Axtar"
+                    FontWeight="Bold"
+                    FontSize="25"
+                    Width="200"
+                    Background="LightSkyBlue"
+                    Margin="115,62,115,47"
+                    Click="Search_Click"/>
+
+                <!-- ========== Yazdir BUTTONU ========== -->
+                <Button Content="Elanları Yazdır"
+                    x:Name="Yazdir_Button"
+                    FontWeight="Bold"
+                    FontSize="25"
+                    Width="200"
+                    Background="LightGreen"
+                    Margin="115,62,115,47"
+                        Click="ElanYazdir_Click"
+                    Visibility="Collapsed"
+                
+                            />
+
+            </UniformGrid>
+            <TextBlock x:Name="MelumatText" Text="" FontSize="36"  FontWeight="Bold" Background="Black" Foreground="#FF61A822" Visibility="Visible" Width="431" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Center"/>
+
+        </StackPanel>
+
+
+
+
+    </ScrollViewer>
+
+
+</Window>
