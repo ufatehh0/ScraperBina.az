@@ -3,6 +3,7 @@
 ScraperBina.az, Bina.az platformasındakı daşınmaz əmlak elanlarını toplamaq üçün hazırlanmış Windows (WPF, C#) tətbiqidir. 
 
 ---
+![Tətbiqin ekran görüntüsü](assets/screenshot1.png)
 
 ## Tələblər
 
