@@ -4,7 +4,7 @@ ScraperBina.az, Bina.az platformasındakı daşınmaz əmlak elanlarını toplam
 
 ---
 <p align="center">
-  <img src="assets/screenshot1.png" alt=Ekran Görüntüsü">
+  <img src="Assets/screenshot1.png" alt=Ekran Görüntüsü">
 </p>
 
 
