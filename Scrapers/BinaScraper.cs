@@ -155,11 +155,18 @@ namespace BinaScraperApp.Scraper
                         sameRepeat++;
                     }
 
-                   
+
+                    // Lazy loading üçün optimallaşdırılmış scroll
                     await listPage.EvaluateAsync(@"
-                        window.scrollTo(0, document.body.scrollHeight);
-                        window.scrollBy(0, -500);
-                        window.scrollTo(0, document.body.scrollHeight);
+                        const scrollStep = 300;
+                        const currentScroll = window.scrollY;
+                        const targetScroll = document.body.scrollHeight - window.innerHeight;
+                        
+                        if (currentScroll < targetScroll) {
+                            window.scrollBy(0, scrollStep);
+                        } else {
+                            window.scrollTo(0, document.body.scrollHeight);
+                        }
                     ");
 
                     await Task.Delay(100);
