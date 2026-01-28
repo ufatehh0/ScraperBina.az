@@ -156,7 +156,7 @@ namespace BinaScraperApp.Scraper
                     }
 
 
-                    // Lazy loading üçün optimallaşdırılmış scroll
+                    
                     await listPage.EvaluateAsync(@"
                         const scrollStep = 300;
                         const currentScroll = window.scrollY;

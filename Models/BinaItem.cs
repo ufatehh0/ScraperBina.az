@@ -23,5 +23,9 @@
         public string Street { get; set; }
         public string LocationHint { get; set; }
         public string EmlakType { get; set; }
+
+        public string Date { get; set; }
+
+        public string ViewCount { get; set; } = "-";
     }
 }

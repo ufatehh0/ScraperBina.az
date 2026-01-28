@@ -133,6 +133,50 @@ namespace BinaScraperApp.Parsers
             {
                 item.HeyetEvArea = "-";
             }
+
+
+
+
+
+            // Tarix və baxış sayını çıxar
+            var statTexts = await page
+                .Locator(".product-statistics__i-text")
+                .AllInnerTextsAsync();
+
+            foreach (var text in statTexts)
+            {
+                var t = text.Trim().ToLower();
+
+                // Baxış sayı
+                if (t.Contains("baxış"))
+                {
+                    
+                    var parts = text.Split(':');
+                    if (parts.Length > 1)
+                        item.ViewCount = parts[1].Trim();
+                }
+
+                // Tarix
+                else if (t.Contains("yeniləndi"))
+                {
+                    
+                    var parts = text.Split(':', 2);
+                    if (parts.Length > 1)
+                        item.Date = parts[1].Trim();
+                }
+            }
+
+
+
+
+
+
+
+
+
+
+
+
         }
     }
 }

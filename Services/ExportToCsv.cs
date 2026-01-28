@@ -39,7 +39,7 @@ namespace BinaScraperApp.Services
             using (var writer = new StreamWriter(_filePath, false, Encoding.UTF8))
             {
                 
-                writer.WriteLine("No,Id,Link,Əməliyyat Növü,Əmlak Növü,Kateqoriya,Qiymət,Məkan,Şəhər,Otaq,Sahə (m²),Sahə (sot),Mərtəbə,Satıcı,Çıxarış,Ipoteka,Təmir,Küçə,Nişangahlar");
+                writer.WriteLine("No,Id,Link,Yenilənmə/Əlavə edilmə vaxtı,Baxış sayı,Əməliyyat Növü,Əmlak Növü,Kateqoriya,Qiymət,Məkan,Şəhər,Otaq,Sahə (m²),Sahə (sot),Mərtəbə,Satıcı,Çıxarış,Ipoteka,Təmir,Küçə,Nişangahlar");
 
                 
                 foreach (var item in _items)
@@ -47,7 +47,9 @@ namespace BinaScraperApp.Services
                     var line = string.Join(",",
                         EscapeCsv(item.No.ToString()),
                         EscapeCsv(item.Id),          
-                        EscapeCsv(item.Link),          
+                        EscapeCsv(item.Link),  
+                        EscapeCsv(item.Date),
+                        EscapeCsv(item.ViewCount),
                         EscapeCsv(item.Type),              
                         EscapeCsv(item.EmlakType),       
                         EscapeCsv(item.Category),       
